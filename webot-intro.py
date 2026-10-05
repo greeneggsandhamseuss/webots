@@ -69,14 +69,14 @@ while robot.step(timestep) != -1:
     right_wheel.setVelocity(0)
     
     if state == "forward":
-        if (time.time() - waitTime) > 2.25:
+        if (time.time() - waitTime) > 4.0:
             waitTime = time.time()
             state = "backward"
         else:
             left_wheel.setVelocity(6)
             right_wheel.setVelocity(6)
     elif state == "backward":
-        if (time.time() - waitTime) > 2.25:
+        if (time.time() - waitTime) > 4.0:
             left_wheel.setVelocity(0)
             right_wheel.setVelocity(0)
         else:
