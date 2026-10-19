@@ -116,6 +116,16 @@ while robot.step(timestep) != -1:
                 left_wheel.setVelocity(-2)
                 right_wheel.setVelocity(2)
 
+                if (time.time() - start_turn_time) >= 1.5:
+                    left_wheel.setVelocity(0)
+                    right_wheel.setVelocity(0)
+
+# the current code doesnt make it move forward after using time.time() to stop turning. it stays stuck in place. 
+# compare using arielle's code
+# use different way to make it accurately sense the walls and move on its own
+# after done this task, use Class and Objects to replace all 'states'
+# force arielle to arrange a time to call to work tg
+
             else:
                 left_wheel.setVelocity(5)
                 right_wheel.setVelocity(5)
@@ -123,3 +133,5 @@ while robot.step(timestep) != -1:
     elif state == "stop":
         left_wheel.setVelocity(0)
         right_wheel.setVelocity(0)
+
+    
